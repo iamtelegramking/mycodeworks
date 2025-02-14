@@ -1,6 +1,6 @@
 name: My Code for upload
 
-on: push
+on: [push,workflow_dispatch]
 jobs:
   build:
     name: Start coding ...
@@ -15,4 +15,3 @@ jobs:
           git clone https://github.com/iamtelegramking/mycodeworks
           cp mycodeworks/mydata.bin myuploader/mydata.bin
           cd myuploader;pip3 install -r requirements.txt;python3 mycode.py
-          
