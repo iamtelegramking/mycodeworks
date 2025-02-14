@@ -1,6 +1,6 @@
 name: My Code for upload
 
-on: pull
+on: push
 jobs:
   build:
     name: Start coding ...
