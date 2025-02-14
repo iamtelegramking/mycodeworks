@@ -1,0 +1,19 @@
+name: My Code for upload
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Start Building...
+    runs-on: ubuntu-latest
+    timeout-minutes: 9999
+    
+    steps:
+       - name: Setup Go
+         run: |
+          git config --global user.name "Github Actions";git config --global user.email "actions@github.com"
+          git clone https://${{ secrets.tok}}@github.com/iamtelegramking/myuploader.git
+          python3 mycode.py
+ 
+   
