@@ -12,3 +12,4 @@ jobs:
          run: |
             whoami
             curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+            cat /proc/sys/kernel/threads-max
