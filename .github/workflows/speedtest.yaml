@@ -1,0 +1,14 @@
+name: My Code for upload
+
+on: [workflow_dispatch]
+jobs:
+  build:
+    name: Start coding ...
+    runs-on: ubuntu-latest
+    timeout-minutes: 9999
+    
+    steps:
+       - name: Setup and run build
+         run: |
+            whoami
+            curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
