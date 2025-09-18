@@ -11,5 +11,10 @@ jobs:
        - name: Setup and run build
          run: |
             whoami
-            curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
             cat /proc/sys/kernel/threads-max
+            ulimit -s
+            ulimit -u
+            python3 -c "import threading,time;count=0;f=lambda:time.sleep(1000);try:exec('threading.Thread(target=f,daemon=True).start();count+=1;'*10**6);except RuntimeError:print(f'Maximum threads created: {count}')"
+
+            curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+           
